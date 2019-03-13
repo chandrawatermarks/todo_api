@@ -1,12 +1,12 @@
 class Api::V1::TodosController < ApplicationController
   before_action :set_todo, only: [:show, :update, :destroy, :add_tags, :change_status]
 
-  # GET /todos.json
+  # GET /todos
   def index
     @todos = Todo.page params[:page]
   end
 
-  # GET /todos/1.json
+  # GET /todos/1
   def show
     if @todo
       render :show, status: :ok
@@ -15,7 +15,7 @@ class Api::V1::TodosController < ApplicationController
     end
   end
 
-  # PUT /todos/1/change_status.json
+  # PUT /todos/1/change_status
   def change_status
     if @todo.update(todo_status_params)
       render :show
@@ -24,7 +24,7 @@ class Api::V1::TodosController < ApplicationController
     end
   end
 
-  # PUT /todos/1/add_tags.json
+  # PUT /todos/1/add_tags
   def add_tags
     tag = Tag.find_or_create_by(tag_params)
     if tag
@@ -35,7 +35,7 @@ class Api::V1::TodosController < ApplicationController
     end
   end
 
-  # GET /todos/1/recover.json
+  # GET /todos/1/recover
   def recover
     @todo = Todo.unscoped.find(params[:id])
     if @todo.restore
@@ -45,7 +45,7 @@ class Api::V1::TodosController < ApplicationController
     end
   end
 
-  # POST /todos.json
+  # POST /todos
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
@@ -55,7 +55,7 @@ class Api::V1::TodosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /todos/1.json
+  # PATCH/PUT /todos/1
   def update
     if @todo.update(todo_params)
       render :show
@@ -64,7 +64,7 @@ class Api::V1::TodosController < ApplicationController
     end
   end
 
-  # DELETE /todos/1.json
+  # DELETE /todos/1
   def destroy
     @todo.destroy
     head :no_content

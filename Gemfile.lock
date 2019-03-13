@@ -145,6 +145,9 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rdoc (4.3.0)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -233,6 +236,7 @@ DEPENDENCIES
   mongoid_paranoia
   rabl
   rails (= 4.2.7.1)
+  responders
   rspec-rails
   rswag
   sass-rails (~> 5.0)
