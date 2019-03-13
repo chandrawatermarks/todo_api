@@ -249,8 +249,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "tag_name": {
-                  "type": "string"
+                "tag": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                    "type": "string"
+                    }
+                  }
                 }
               }
             }

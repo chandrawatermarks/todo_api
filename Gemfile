@@ -54,5 +54,6 @@ group :test do
   gem 'database_cleaner', '~> 1.5'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
+  gem 'simplecov'
 end
 
