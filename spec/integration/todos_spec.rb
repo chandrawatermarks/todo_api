@@ -58,7 +58,7 @@ describe 'Todos API' do
 
       response '200', 'todo updated' do
         let(:id) { Todo.first.id }
-        let(:todo) { { title: 'foo', status: "Finish" } }
+        let(:todo) { { title: 'foo', status: "Finished" } }
         run_test!
       end
 

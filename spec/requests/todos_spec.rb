@@ -95,13 +95,13 @@ RSpec.describe 'Todo API', type: :request do
   # Test suite for PATCH /api/v1/todos/:todo_id/change_status
 
   describe 'PUT /api/v1/todos/:todo_id/change_status' do
-    let(:valid_attributes) {{todo: {status: 'Finish'}}}
+    let(:valid_attributes) {{todo: {status: 'Finished'}}}
 
     context 'when requested to update with valid status' do
       before {put "/api/v1/todos/#{todo_id}/change_status", valid_attributes}
 
       it 'update the todo' do
-        expect(json['todo']['status']).to eq("Finish")
+        expect(json['todo']['status']).to eq("Finished")
       end
 
       it 'returns the status code 200' do

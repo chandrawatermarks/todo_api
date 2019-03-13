@@ -13,7 +13,7 @@ class Todo
   field	:start_date, type: Date
   field :due_date, type: Date
   field :completed_on, type: Date
-  enum status: [:Assigned, :Start, :Finish]
+  enum status: [:Assigned, :Started, :Finished]
   
   has_and_belongs_to_many :tags
 
